@@ -3,5 +3,6 @@ Django==4.2.3
 iniconfig==2.0.0
 packaging==23.1
 pluggy==1.2.0
+psycopg2==2.9.6
 pytest==7.4.0
 sqlparse==0.4.4
