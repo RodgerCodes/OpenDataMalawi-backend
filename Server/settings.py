@@ -4,7 +4,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -16,7 +15,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -26,6 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'User.apps.UserConfig',
+    'Data_Library.apps.DataLibraryConfig'
 ]
 
 MIDDLEWARE = [
@@ -37,6 +37,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = "User.User"
 
 ROOT_URLCONF = 'Server.urls'
 
@@ -58,19 +60,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Server.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+# 'default': {
+# 'ENGINE': 'django.db.backends.postgresql',
+# 'NAME': os.environ.get('POSTGRES_NAME'),
+# 'USER': os.environ.get('POSTGRES_USER'),
+# 'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+# 'HOST': 'db',
+# 'PORT': 5432,
+# }
+# }
+
 DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.postgresql',
-'NAME': os.environ.get('POSTGRES_NAME'),
-'USER': os.environ.get('POSTGRES_USER'),
-'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-'HOST': 'db',
-'PORT': 5432, #default port you don't need to mention in docker-compose
-}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'opendata',
+        'USER': 'postgres',
+        'PASSWORD': 'adminuser',
+        'HOST': 'localhost',
+        'PORT': 5432,
+    }
 }
 
 # DATABASES = {
@@ -99,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -110,7 +121,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
