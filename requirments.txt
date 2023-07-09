@@ -2,6 +2,7 @@ asgiref==3.7.2
 Django==4.2.3
 django-appconf==1.0.5
 django-cors-headers==4.1.0
+django-debug-toolbar==4.1.0
 djangorestframework==3.14.0
 iniconfig==2.0.0
 packaging==23.1
