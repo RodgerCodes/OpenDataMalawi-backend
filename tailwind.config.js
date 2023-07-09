@@ -3,7 +3,11 @@ module.exports = {
       './templates/**/*.html'
   ],
   theme: {
-    extend: {},
+    extend: {
+        colors:{
+            'blue-color':'#0185FF'
+        }
+    },
   },
   plugins: [],
 }
