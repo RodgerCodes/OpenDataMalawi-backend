@@ -7,7 +7,7 @@
 <!--    sign up header -->
     <div>
        <h1 class="text-blue-color text-4xl font-bold my-4 text-center">Sign In</h1>
-       <p class="text-center">Don't  have an account?  <a routerLink="/sign-up" class="text-blue-color">Sign Up</a></p>
+       <p class="text-center">Don't  have an account?  <a href="{% url 'user:sign_up' %}" class="text-blue-color">Sign Up</a></p>
     </div>
 
 <!--    sign up form -->
@@ -43,4 +43,5 @@
 {#    </div>#}
 {#  </div>#}
 </div>
+   </div>
 {% endblock %}
