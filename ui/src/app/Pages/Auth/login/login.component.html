@@ -1,1 +1,30 @@
-<p>login works!</p>
+   <div class="w-full mb-6">
+<!--  sign up container-->
+  <div class="grid grid-cols-1 place-items-center mt-8">
+<!--    sign up header -->
+    <div>
+       <h1 class="text-blue-color text-4xl font-bold my-4 text-center">Sign In</h1>
+       <p class="text-center">Don't  have an account?  <a  class="text-blue-color">Sign Up</a></p>
+    </div>
+
+<!--    sign up form -->
+    <form [formGroup]="loginForm" (ngSubmit)="SignIn()"  class="sm:w-1/2 md:w-1/3 my-8">
+       <div class="mb-6 w-full">
+         <label class="block mb-2 text-md font-bold">Email</label>
+         <input type="email" formControlName="email" name="email" class=" border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex john@doe.com" required>
+       </div>
+      <div class="mb-6">
+        <label class="block mb-2 text-md font-bold">Password</label>
+        <input type="password" formControlName="password" name="password" class=" border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Password" required>
+      </div>
+      <div class="mb-6">
+         <button type="submit" class="mt-4 flex justify-center bg-blue-color text-white w-full px-4 py-2 font-bold text-lg">
+           Sign In
+         </button>
+      </div>
+     <!-- <div class="mb-4">
+        <p class="text-center text-sm">Forgot Your Password? <a routerLink="/forgot-password" class="text-blue-color">Click here</a> </p>
+      </div>-->
+    </form>
+</div>
+   </div>

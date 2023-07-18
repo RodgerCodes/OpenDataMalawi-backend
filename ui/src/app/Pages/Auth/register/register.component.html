@@ -1,1 +1,31 @@
-<p>register works!</p>
+<div class="w-full mb-6">
+  <!--  sign in container-->
+  <div class="grid grid-cols-1 place-items-center mt-8">
+    <!--    sign in header -->
+    <div>
+      <h1 class="text-blue-color text-4xl font-bold my-4 text-center">Sign Up</h1>
+      <p class="text-center">Already have an account?  <a routerLink="/sign-in" class="text-blue-color">Sign In</a></p>
+    </div>
+
+    <!--    sign up form -->
+    <form  class="sm:w-1/2 md:w-1/3 my-8" method="post" action="" >
+      <div class="mb-6 w-full">
+        <label class="block mb-2 text-md font-bold">Username</label>
+        <input type="text" name="username" class=" border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your full name" required>
+      </div>
+      <div class="mb-6 w-full">
+        <label class="block mb-2 text-md font-bold">Email</label>
+        <input type="email" name="email" class=" border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex john@doe.com" required>
+      </div>
+      <div class="mb-6">
+        <label class="block mb-2 text-md font-bold">Password</label>
+        <input type="password" name="password" class=" border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="create a password" required>
+      </div>
+      <div class="mb-6">
+        <button type="submit" class="mt-4 bg-blue-color text-white w-full px-4 py-2 font-bold text-lg">
+          Sign Up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
