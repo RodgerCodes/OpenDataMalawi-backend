@@ -1,1 +1,6 @@
 ./static/CACHE
+/User/__pycache__/
+/Server/__pycache__/
+/data
+.idea/
+/Data_Library/__pycache__/

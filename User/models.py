@@ -11,17 +11,16 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, max_length=500)
     password = models.CharField(max_length=10000)
     is_staff = models.BooleanField(
-        d('staff status'),
+        d("staff status"),
         default=False,
-        help_text=d(
-            'Designates whether the user can log into this admin site.'),
+        help_text=d("Designates whether the user can log into this admin site."),
     )
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
     objects = UserManager()
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
     def __str__(self):
@@ -33,3 +32,6 @@ class VerificationCodes(models.Model):
     verification_code = models.PositiveIntegerField(null=True, blank=True)
     expiry_date = models.DateTimeField(null=True)
     created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.userID.email

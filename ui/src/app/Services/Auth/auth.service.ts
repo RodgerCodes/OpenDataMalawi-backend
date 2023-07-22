@@ -12,10 +12,10 @@ export class AuthService {
 
 
   register(formData:any):Observable<any>{
-    return
+    return this.http.post(`${apiUrl}/api/account/v1/register/`, formData)
   }
 
   login(formData:any):Observable<any>{
-     return this.http;
+     return this.http.post(`${apiUrl}/api/account/v1/login/`, formData)
   }
 }
