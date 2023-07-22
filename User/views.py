@@ -4,6 +4,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.state import token_backend
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import User
 from .serializer import UserSerializer
@@ -35,7 +38,27 @@ class RegisterAccount(APIView):
         )
 
 
-# TODO add login route
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        # Add custom claims
+        token["email"] = user.email
+        # ...
+
+        return token
+
+    def validate(self, attrs):
+        data = super(MyTokenObtainPairSerializer, self).validate(attrs)
+        payload = token_backend.decode(data["access"], verify=True)
+        # user_uid = payload['user_id']
+        data.update({"user": payload})
+        return data
+
+
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
 
 
 class GetUserDetails(generics.RetrieveAPIView):

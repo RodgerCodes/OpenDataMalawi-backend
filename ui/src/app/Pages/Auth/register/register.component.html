@@ -11,15 +11,15 @@
     <form [formGroup]="registerForm" (ngSubmit)="RegisterUser()"  class="sm:w-1/2 md:w-1/3 my-8">
       <div class="mb-6 w-full">
         <label class="block mb-2 text-md font-bold">Username</label>
-        <input type="text" name="username" class=" border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your full name" required>
+        <input type="text" formControlName="username" name="username" class=" border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your full name" required>
       </div>
       <div class="mb-6 w-full">
         <label class="block mb-2 text-md font-bold">Email</label>
-        <input type="email" name="email" class=" border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex john@doe.com" required>
+        <input type="email" formControlName="email" name="email" class=" border text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ex john@doe.com" required>
       </div>
       <div class="mb-6">
         <label class="block mb-2 text-md font-bold">Password</label>
-        <input type="password" name="password" class=" border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="create a password" required>
+        <input type="password" formControlName="password" name="password" class=" border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="create a password" required>
       </div>
       <div class="mb-6">
         <button type="submit" class="mt-4 bg-blue-color text-white w-full px-4 py-2 font-bold text-lg">
