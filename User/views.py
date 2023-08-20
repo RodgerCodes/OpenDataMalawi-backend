@@ -63,7 +63,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 class GetUserDetails(generics.RetrieveAPIView):
     """
-    View for getting logged in user details
+    View for getting logged-in user details
     """
 
     model = User
