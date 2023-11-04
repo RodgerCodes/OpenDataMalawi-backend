@@ -1,11 +1,16 @@
 asgiref==3.7.2
+attrs==23.1.0
 Django==4.2.3
 django-appconf==1.0.5
 django-cors-headers==4.1.0
 django-debug-toolbar==4.1.0
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
+drf-spectacular==0.26.5
+inflection==0.5.1
 iniconfig==2.0.0
+jsonschema==4.19.2
+jsonschema-specifications==2023.7.1
 packaging==23.1
 Pillow==10.0.0
 pluggy==1.2.0
@@ -13,6 +18,10 @@ psycopg2==2.9.6
 PyJWT==2.7.0
 pytest==7.4.0
 pytz==2023.3
+PyYAML==6.0.1
 rcssmin==1.1.1
+referencing==0.30.2
 rjsmin==1.2.1
+rpds-py==0.12.0
 sqlparse==0.4.4
+uritemplate==4.1.1

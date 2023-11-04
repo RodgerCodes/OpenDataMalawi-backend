@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "User.apps.UserConfig",
     "rest_framework",
     "corsheaders",
+    "drf_spectacular",
     "Data_Library.apps.DataLibraryConfig",
 ]
 
@@ -64,7 +65,15 @@ ROOT_URLCONF = "Server.urls"
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
+    ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Open Data Malawi API",
+    "DESCRIPTION": "Your project description",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
 }
 
 SIMPLE_JWT = {
