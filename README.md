@@ -69,3 +69,7 @@ TODO: add tests
 ```bash
   make docker-test
 ``` -->
+
+## Contributions
+
+As usual PRs are welcome.
