@@ -8,7 +8,6 @@ NOTE: Make sure to have docker installed
 
 **Server:** Django, Postgres
 
-
 ## Run Locally
 
 Clone the project
