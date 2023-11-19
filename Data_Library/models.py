@@ -22,9 +22,6 @@ class Field(models.Model):
 class Dataset(models.Model):
     title = models.CharField(max_length=600)
     field = models.ForeignKey(Field, on_delete=models.SET_NULL, null=True, blank=True)
-    uploadedBy = models.ForeignKey(
-        "User.User", on_delete=models.SET_NULL, null=True, blank=True
-    )
     fileType = models.ForeignKey(
         FileFormat, on_delete=models.SET_NULL, null=True, blank=True
     )
