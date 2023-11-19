@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from rest_framework import status
-from Data_Library.models import Field, FileFormat
+from Data_Library.models import Dataset, Field, FileFormat
 from Data_Library.serializer import DataSetSerializer
 
 
@@ -59,3 +59,19 @@ class AddDataSetService(IDataSetAbstractMethod):
             }
         self._save_dataset()
         return {"message": "Dateset successfully added", "status": status.HTTP_200_OK}
+
+
+class SearchDataSetService:
+    """
+    Service for searching datasets
+    """
+
+    serializer = DataSetSerializer
+
+    def __init__(self, searchQuery) -> None:
+        self.searchQuery = searchQuery
+
+    def searchDatasets(self) -> dict:
+        dataset = Dataset.objects.filter(title__icontains=self.searchQuery)
+        dataSerializer = self.serializer(dataset, many=True)
+        return {"data": dataSerializer.data, "status": status.HTTP_200_OK}

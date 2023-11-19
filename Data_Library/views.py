@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 
-from Data_Library.services import AddDataSetService
+from Data_Library.services import AddDataSetService, SearchDataSetService
 
 from .models import Dataset, Field, FileFormat
 from .serializer import DataSetSerializer, FieldSerializer, FileFormatSerializer
@@ -41,4 +41,14 @@ class AddDataSet(APIView):
 
     def post(self, request):
         instance = AddDataSetService(request.data).add_dataset()
+        return Response(instance, status=instance["status"])
+
+
+class SearchDataSetsByName(APIView):
+    """
+    View for searching datasets by name
+    """
+
+    def get(self, request, searchQuery):
+        instance = SearchDataSetService(searchQuery).searchDatasets()
         return Response(instance, status=instance["status"])
