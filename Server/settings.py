@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "User.apps.UserConfig",
     "rest_framework",
     "corsheaders",
     "drf_spectacular",
@@ -58,7 +57,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-AUTH_USER_MODEL = "User.User"
 
 ROOT_URLCONF = "Server.urls"
 

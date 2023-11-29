@@ -25,6 +25,7 @@ class Dataset(models.Model):
     fileType = models.ForeignKey(
         FileFormat, on_delete=models.SET_NULL, null=True, blank=True
     )
+    description = models.TextField(null=True)
     uploadedBy = models.CharField(max_length=400, null=True, blank=True)
     filePath = models.FileField(upload_to=get_dataset_file_path)
     updated = models.DateTimeField(auto_now=True)

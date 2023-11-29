@@ -44,6 +44,16 @@ class AddDataSet(APIView):
         return Response(instance, status=instance["status"])
 
 
+class ViewDataSet(generics.RetrieveAPIView):
+    """
+    view for getting details of a single dataset
+    """
+
+    model = Dataset
+    serializer_class = DataSetSerializer
+    queryset = Dataset.objects.all()
+
+
 class SearchDataSetsByName(APIView):
     """
     View for searching datasets by name
