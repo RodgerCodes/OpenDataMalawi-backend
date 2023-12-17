@@ -10,4 +10,8 @@ urlpatterns = [
         "v1/search-datasets-by-name/<str:searchQuery>/",
         views.SearchDataSetsByName.as_view(),
     ),
+    path(
+        "v1/search-datasets-by-field/<int:field>/",
+        views.FilterDataSetByField.as_view(),
+    ),
 ]

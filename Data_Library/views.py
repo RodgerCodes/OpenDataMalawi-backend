@@ -62,3 +62,13 @@ class SearchDataSetsByName(APIView):
     def get(self, request, searchQuery):
         instance = SearchDataSetService(searchQuery).searchDatasets()
         return Response(instance, status=instance["status"])
+
+
+class FilterDataSetByField(APIView):
+    """
+    View for filtering datasets by field
+    """
+
+    def get(self, request, field):
+        instance = SearchDataSetService(field).filterDatasets()
+        return Response(instance, status=instance["status"])
